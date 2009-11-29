@@ -1,0 +1,9 @@
+2009-11-29 
+ * [pending] doxygen support is there and optional
+ * [pending] wrote 'make install' step using cmake 
+ * WARNING: src/win32/ is not used at all, maybe someone has to test this with win32 ...
+ * changed the library #include "noise.h" instead of "noise/noise.h"
+   there is no /include directory anymore since one must use src/ as include path now
+   which will the be searched for "noise.h" now
+ * cmake: created a CMakeList.txt which builds the .so and .a file
+ * removed static Makefiles and libtool
