@@ -2,9 +2,9 @@
 
 cmake_minimum_required(VERSION 2.6)
 
-SET ( LIBNOISE_VERSION "1.0.0" )
+SET ( LIBNOISE_VERSION "1.0.0-cmake" )
 
-# ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(doc)
 
 #ADD_SUBDIRECTORY(samples)

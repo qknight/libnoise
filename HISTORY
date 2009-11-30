@@ -1,10 +1,5 @@
 2009-11-29 
- * [pending] version should be controlled by cmake instead of a static entry in:
-  - src/ someheaderfile or define
-  - doc/ doxygen definition file
- * [pending] doxygen support is there (and optional)
-
-
+ * basic doxygen support is there
  * wrote 'make install' step using cmake 
  * WARNING: src/win32/ is not used at all, maybe someone has to test this with win32 ...
    and i removed thse win32 files from the distribution, maybe someone want's to have them back?

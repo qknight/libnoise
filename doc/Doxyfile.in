@@ -4,7 +4,7 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 PROJECT_NAME           = libnoise
-PROJECT_NUMBER         = ${LIBNOISE_VERSION}
+PROJECT_NUMBER         = @LIBNOISE_VERSION@
 OUTPUT_DIRECTORY       = .
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = English
@@ -68,7 +68,7 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = ../src/
+INPUT                  = @CMAKE_DOXYGEN_INPUT_LIST@
 FILE_PATTERNS          = *.cpp *.h
 RECURSIVE              = YES
 EXCLUDE                = 
@@ -77,7 +77,7 @@ EXCLUDE_PATTERNS       =
 EXAMPLE_PATH           = 
 EXAMPLE_PATTERNS       = 
 EXAMPLE_RECURSIVE      = NO
-IMAGE_PATH             = img/
+IMAGE_PATH             = @CMAKE_DOXYGEN_IMAGE_PATH@
 INPUT_FILTER           = 
 FILTER_PATTERNS        = 
 FILTER_SOURCE_FILES    = NO
