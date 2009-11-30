@@ -40,8 +40,7 @@
 /// - Microsoft Visual C++ 5.0 under Microsoft Windows 2000 Service Pack 4
 /// - gcc 3.3.4 under Gentoo Linux 10.0 (x86)
 ///
-/// It is not known if libnoise will compile on 64-bit platforms, although
-/// there is a good change that it will.
+/// libnoise will compile on 32-bit/64-bit platforms
 ///
 /// @section noise Noise Modules
 ///
