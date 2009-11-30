@@ -55,21 +55,6 @@ SET_TARGET_PROPERTIES( noise-static PROPERTIES OUTPUT_NAME "noise" )
 # i would to see more projects using these defaults
 ADD_DEFINITIONS( "-Wall -ansi -pedantic" )
 
-# project options
-OPTION( BUILD_WITH_DEBUG "Set to OFF to build the library targets without -g" OFF )
-OPTION( BUILD_WITH_OPTIMIZATION "Set to OFF to build the library targets without -O3" ON )
-
-IF (BUILD_WITH_OPTIMIZATION)
-  ADD_DEFINITIONS( "-O3" )
-ENDIF(BUILD_WITH_OPTIMIZATION)
-
-IF (BUILD_WITH_DEBUG)
-  IF (BUILD_WITH_OPTIMIZATION)
-    MESSAGE( FATAL_ERROR "ERROR: BUILD_WITH_OPTIMIZATION AND BUILD_WITH_DEBUG is enabled! Disable BUILD_WITH_OPTIMIZATION when you want to debug the library. In general -O3 can't be used with -g because debuggers fail to display propper values.")
-  ENDIF(BUILD_WITH_OPTIMIZATION)
-  ADD_DEFINITIONS( "-g" )
-ENDIF(BUILD_WITH_DEBUG)
-
 # install include files into /usr/include
 INSTALL( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" DESTINATION "/usr/include" )
 
