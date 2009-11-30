@@ -3,6 +3,6 @@
 cmake_minimum_required(VERSION 2.6)
 
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(doc)
 
-# make install
+#ADD_SUBDIRECTORY(doc)
+#ADD_SUBDIRECTORY(samples)
