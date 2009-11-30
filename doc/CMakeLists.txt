@@ -32,7 +32,7 @@ IF(DOXYGEN_FOUND)
   # with DOXYGEN_SOURCE_DIR we fill a list of directories and later we write it into
   # the Doxyfile with a REGEX REPLACE (see below)
   SET( DOXYGEN_SOURCE_DIR
-    /home/joachim/Desktop/projects/springrts.com-random-map-generator/noise/src
+    "${CMAKE_SOURCE_DIR}/src"
   )
 
   SET(DOXYGEN_OUTPUT_DIR html)
