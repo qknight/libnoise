@@ -1,53 +1,31 @@
 == Compiling: ==
-
 cmake supports 'out of source' builds by default, to use it do this:
 
-mkdir build
-cd build
-cmake ..
-make
+  mkdir build
+  cd build
+  cmake ..
+  make
 
 this should create everything into the build/ directory
 
 == Installing libnoise: ==
+this is covered by cmake:
+  make install 
 
+== how to use libnoise: ==
+see examples for details but in general:
+ a) you need to supply the library -lnoise to the linker
+ b) the includes to the compile with -I /usr/include/noise
 
-WARNING
-WARNING i did not update this text below yet
-WARNING
-WARNING
-
-
-
-1.  Make!
-
-CXXFLAGS='-O3 -fomit-frame-pointer ...options of choice...' make
-
+== A comment on performance ==
 Using compiler optimizations for libnoise is *strongly recommended*.  Using the
 unoptimized library is roughly a fifth as fast as using -O3 on my test
 computer.
 
-2.  Install!
+this cmake build by default (if not in developer mode) will build with -O3
 
-The 'include' directory should be copied to your software include directory,
-usually /usr/local/include, with an appropriate name.  I use
+see:
+CMAKE_BUILD_TYPE
 
-  cp -R include /usr/local/include/noise
+Type of build (Debug, Release, ...)
 
-Similarly, the *contents* of the 'lib' directory should go into your library
-directory (usually /usr/local/lib).  Once you've done that, run 'ldconfig',
-then make a symlink from LIBDIR/libnoise.so to LIBDIR/libnoise.so.0.  I use:
-
-  cp lib/* /usr/local/lib
-  ldconfig
-  ln -s /usr/local/lib/libnoise.so.0 /usr/local/lib/libnoise.so
-
-At this point, you should be able to include libnoise in your projects using
-
-  #include <noise/noise.h>
-
-and
-
-  g++ ...options... -lnoise
-
-At some point we'll automate this process.

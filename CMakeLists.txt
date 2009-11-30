@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 2.6)
 
 SET ( LIBNOISE_VERSION "1.0.0-cmake" )
 
+OPTION(BUILD_LIBNOISE_DOCUMENTATION "Create doxygen documentation for developers" ON)
+
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(doc)
 

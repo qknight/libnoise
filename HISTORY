@@ -1,4 +1,6 @@
 2009-11-29 
+ * there is some license problem: the library uses the LGPL 2.1 and the examples (on the download page use GPL v2)
+   but the zip file with example sources included uses also LGPL 2.1 license?!
  * basic doxygen support is there
  * wrote 'make install' step using cmake 
  * WARNING: src/win32/ is not used at all, maybe someone has to test this with win32 ...
