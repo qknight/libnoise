@@ -49,7 +49,10 @@ set(libSrcs ${libSrcs}
 add_library( noise SHARED ${libSrcs} )
 add_library( noise-static STATIC ${libSrcs} )
 
-SET_TARGET_PROPERTIES( noise PROPERTIES LIBNOISE_VERSION 1.0.0 )
+# this value is set in the root CMakeLists.txt
+SET_TARGET_PROPERTIES( noise PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
+SET_TARGET_PROPERTIES( noise-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
+
 SET_TARGET_PROPERTIES( noise-static PROPERTIES OUTPUT_NAME "noise" )
 
 # i would to see more projects using these defaults

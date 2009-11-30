@@ -2,13 +2,14 @@
  * [pending] version should be controlled by cmake instead of a static entry in:
   - src/ someheaderfile or define
   - doc/ doxygen definition file
- * [pending] doxygen support is there and optional
+ * [pending] doxygen support is there (and optional)
 
 
  * wrote 'make install' step using cmake 
  * WARNING: src/win32/ is not used at all, maybe someone has to test this with win32 ...
+   and i removed thse win32 files from the distribution, maybe someone want's to have them back?
  * changed the library #include "noise.h" instead of "noise/noise.h"
    there is no /include directory anymore since one must use src/ as include path now
    which will the be searched for "noise.h" now
  * cmake: created a CMakeList.txt which builds the .so and .a file
- * removed static Makefiles and libtool
+ * removed static Makefiles and libtool but keep compatibility to existing projects working
