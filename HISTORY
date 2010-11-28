@@ -1,3 +1,8 @@
+2010-11-29
+ * fixed some doxygen specific issue, thanks to Max Bolingbroke. now libnoise compiles in:
+   - gentoo linux (according to me: 32 and 64 bit runtimes)
+   - mac os x, using macports (according to Max Bolingbroke) 
+
 2009-11-29 
  * there is some license problem: the library uses the LGPL 2.1 and the examples (on the download page use GPL v2)
    but the zip file with example sources included uses also LGPL 2.1 license?!
