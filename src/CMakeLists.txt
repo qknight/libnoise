@@ -55,15 +55,15 @@ SET_TARGET_PROPERTIES( noise-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSI
 
 SET_TARGET_PROPERTIES( noise-static PROPERTIES OUTPUT_NAME "noise" )
 
-# i would to see more projects using these defaults
+# i would like to see more projects using these defaults
 ADD_DEFINITIONS( "-Wall -ansi -pedantic" )
 
 # install include files into /usr/include
-INSTALL( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" DESTINATION include )
+INSTALL( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" DESTINATION "$CMAKE_INSTALL_PREFIX"/include )
 
 # install libraries into /lib
-INSTALL( TARGETS noise DESTINATION lib )
-INSTALL( TARGETS noise-static DESTINATION lib )
+INSTALL( TARGETS noise DESTINATION "$CMAKE_INSTALL_PREFIX"/lib )
+INSTALL( TARGETS noise-static DESTINATION "$CMAKE_INSTALL_PREFIX"/lib )
 
 
 
