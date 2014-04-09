@@ -15,3 +15,49 @@ You can also view some other examples of what libnoise can do.
 In libnoise, coherent-noise generators are encapsulated in classes called noise modules.
 There are many different types of noise modules. Some noise modules can combine or modify the outputs
 of other noise modules in various ways; you can join these modules together to generate very complex coherent noise.
+
+Compiling
+---------
+
+cmake supports 'out of source' builds by default, to use it do this:
+
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
+
+this should create everything into the `build/` directory
+
+Installing
+----------
+
+this is covered by cmake:
+
+```shell
+make install
+```
+
+Usage
+-----
+
+see examples for details but in general:
+
+ 1. you need to supply the library `-lnoise` to the linker
+ 2. the includes to the compile with `-I /usr/include/noise`
+
+A comment on performance
+------------------------
+
+Using compiler optimizations for libnoise is *strongly recommended*.  Using the
+unoptimized library is roughly a fifth as fast as using -O3 on my test
+computer.
+
+this cmake build by default (if not in developer mode) will build with `-O3`
+
+
+see:
+CMAKE_BUILD_TYPE
+
+Type of build (Debug, Release, ...)
