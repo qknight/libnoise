@@ -1,0 +1,21 @@
+
+# Generated cmake files
+CMakeFiles/
+Makefile
+cmake_install.cmake
+doc/CMakeFiles/
+doc/Makefile
+doc/cmake_install.cmake
+src/CMakeFiles/
+src/Makefile
+src/cmake_install.cmake
+CMakeCache.txt
+
+# Output files
+src/libnoise.a
+src/libnoise.dylib
+
+# Output Documentation
+doc/Doxyfile
+doc/html
+
