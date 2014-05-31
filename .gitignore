@@ -10,6 +10,7 @@ src/CMakeFiles/
 src/Makefile
 src/cmake_install.cmake
 CMakeCache.txt
+install_manifest.txt
 
 # Output files
 src/libnoise.a
