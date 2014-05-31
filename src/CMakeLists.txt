@@ -56,7 +56,7 @@ SET_TARGET_PROPERTIES( noise-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSI
 SET_TARGET_PROPERTIES( noise-static PROPERTIES OUTPUT_NAME "noise" )
 
 # i would like to see more projects using these defaults
-ADD_DEFINITIONS( "-Wall -ansi -pedantic" )
+ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
 
 # install include files into /usr/include
 INSTALL( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" DESTINATION
