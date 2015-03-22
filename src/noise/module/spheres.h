@@ -67,7 +67,7 @@ namespace noise
     /// turbulence, is useful for generating agate-like textures.
     ///
     /// This noise module does not require any source modules.    
-    class Spheres: public Module
+    class NOISE_EXPORT Spheres : public Module
     {
 
       public:

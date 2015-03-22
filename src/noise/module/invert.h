@@ -45,7 +45,7 @@ namespace noise
     /// @image html moduleinvert.png
     ///
     /// This noise module requires one source module.
-    class Invert: public Module
+    class NOISE_EXPORT Invert: public Module
     {
 
       public:

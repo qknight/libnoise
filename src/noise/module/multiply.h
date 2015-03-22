@@ -46,7 +46,7 @@ namespace noise
     /// @image html modulemultiply.png
     ///
     /// This noise module requires two source modules.
-    class Multiply: public Module
+    class NOISE_EXPORT Multiply: public Module
     {
 
       public:

@@ -54,7 +54,7 @@ namespace noise
     /// rescales that value back to the original range.
     ///
     /// This noise module requires one source module.
-    class Exponent: public Module
+    class NOISE_EXPORT Exponent : public Module
     {
 
       public:

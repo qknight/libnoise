@@ -54,7 +54,7 @@ namespace noise
     ///
     /// This sphere has a radius of 1.0 unit and its center is located at
     /// the origin.
-    class Sphere
+    class NOISE_EXPORT Sphere
     {
 
       public:

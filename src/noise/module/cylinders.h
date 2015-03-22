@@ -69,7 +69,7 @@ namespace noise
     /// turbulence, is useful for generating wood-like textures.
     ///
     /// This noise module does not require any source modules.
-    class Cylinders: public Module
+    class NOISE_EXPORT Cylinders : public Module
     {
 
       public:

@@ -70,7 +70,7 @@ namespace noise
     /// your stereotypical desert canyon.
     ///
     /// This noise module requires one source module.
-    class Terrace: public Module
+    class NOISE_EXPORT Terrace: public Module
     {
 
 	    public:

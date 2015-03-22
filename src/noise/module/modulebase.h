@@ -30,6 +30,16 @@
 #include "../exception.h"
 #include "../noisegen.h"
 
+#ifdef _WIN32
+#  if NOISE_BUILD_DLL
+#    define NOISE_EXPORT __declspec(dllexport)
+#  else
+#    define NOISE_EXPORT __declspec(dllimport)
+#  endif
+#else
+#define NOISE_EXPORT
+#endif
+
 namespace noise
 {
 
@@ -220,7 +230,7 @@ namespace noise
     /// It shouldn't be too difficult to create your own noise module.  If you
     /// still have some problems, take a look at the source code for
     /// noise::module::Add, which is a very simple noise module.
-    class Module
+    class NOISE_EXPORT Module
     {
 
       public:
