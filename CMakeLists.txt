@@ -7,6 +7,7 @@ SET ( LIBNOISE_VERSION "1.0.0-cmake" )
 OPTION(BUILD_LIBNOISE_DOCUMENTATION "Create doxygen documentation for developers" OFF)
 
 ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(noiseutils)
 ADD_SUBDIRECTORY(doc)
 
 #ADD_SUBDIRECTORY(samples)
