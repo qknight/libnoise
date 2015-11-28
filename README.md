@@ -1,6 +1,9 @@
 libnoise
 ========
 
+This is a fork of libnoise which includes noiseutils in the building and installing process.
+It also contains FindLibNoise.cmake
+
 > This is a fork of libnoise which changes the build system from static Makefiles to cmake.
 
 A portable, open-source, coherent noise-generating library for C++
@@ -46,6 +49,10 @@ see examples for details but in general:
 
  1. you need to supply the library `-lnoise` to the linker
  2. the includes to the compile with `-I /usr/include/noise`
+
+OR
+
+Use provided FindLibNoise.cmake
 
 A comment on performance
 ------------------------
