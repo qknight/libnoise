@@ -130,7 +130,7 @@ namespace noise
         /// @param a Value of the alpha (transparency) channel.
         Color (noise::uint8 r, noise::uint8 g, noise::uint8 b,
           noise::uint8 a):
-          red (r), green (g), blue (b), alpha (a)
+          alpha (a), blue (b), green (g), red (r) 
         {
         }
 
@@ -1212,8 +1212,8 @@ namespace noise
 
         /// Constructor.
         WriterTER ():
-          m_pSourceNoiseMap (NULL),
-          m_metersPerPoint (DEFAULT_METERS_PER_POINT)
+          m_metersPerPoint (DEFAULT_METERS_PER_POINT),
+          m_pSourceNoiseMap (NULL)
         {
         }
 

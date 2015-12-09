@@ -958,7 +958,7 @@ RendererImage::RendererImage ():
   m_recalcLightValues (true)
 {
   BuildGrayscaleGradient ();
-};
+}
 
 void RendererImage::AddGradientPoint (double gradientPos,
   const Color& gradientColor)
@@ -1211,7 +1211,7 @@ RendererNormalMap::RendererNormalMap ():
   m_pDestImage      (NULL),
   m_pSourceNoiseMap (NULL)
 {
-};
+}
 
 Color RendererNormalMap::CalcNormalColor (double nc, double nr, double nu,
   double bumpHeight) const
