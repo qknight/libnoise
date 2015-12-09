@@ -42,21 +42,29 @@ set(libSrcs ${libSrcs}
     module/translatepoint.cpp
     module/turbulence.cpp
     module/voronoi.cpp
-
-#     win32/dllmain.cpp
 )
 
+IF (WIN32)
+add_library( noise SHARED ${libSrcs} win32/dllmain.cpp)
+ELSE()
 add_library( noise SHARED ${libSrcs} )
+ENDIF()
+
 add_library( noise-static STATIC ${libSrcs} )
 
 # this value is set in the root CMakeLists.txt
 SET_TARGET_PROPERTIES( noise PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
 SET_TARGET_PROPERTIES( noise-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
 
+target_compile_definitions( noise PRIVATE NOISE_BUILD_DLL)
+target_compile_definitions( noise-static PUBLIC NOISE_STATIC)
+
 SET_TARGET_PROPERTIES( noise-static PROPERTIES OUTPUT_NAME "noise" )
 
 # i would like to see more projects using these defaults
-ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
+endif()
 
 # install include files into /usr/include
 INSTALL( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" DESTINATION

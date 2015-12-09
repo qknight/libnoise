@@ -1,5 +1,10 @@
+> My personal fork was to use this alongside a native plugin for the Unity game engine. It is still licensed under the LGPL as before. Primarily, I made some modifications to allow compiling to a Windows x64 DLL.
+
 libnoise
 ========
+
+This is a fork of libnoise which includes noiseutils in the building and installing process.
+It also contains FindLibNoise.cmake
 
 > This is a fork of libnoise which changes the build system from static Makefiles to cmake.
 
@@ -46,6 +51,10 @@ see examples for details but in general:
 
  1. you need to supply the library `-lnoise` to the linker
  2. the includes to the compile with `-I /usr/include/noise`
+
+OR
+
+Use provided FindLibNoise.cmake
 
 A comment on performance
 ------------------------

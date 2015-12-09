@@ -46,7 +46,7 @@ namespace noise
     /// @image html moduleabs.png
     ///
     /// This noise module requires one source module.
-    class Abs: public Module
+    class NOISE_EXPORT Abs: public Module
     {
 
       public:

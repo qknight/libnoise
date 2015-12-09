@@ -125,7 +125,7 @@ namespace noise
     /// <a href=http://www.pandromeda.com/>MojoWorld</a>.  He is also one of
     /// the authors in <i>Texturing and Modeling: A Procedural Approach</i>
     /// (Morgan Kaufmann, 2002. ISBN 1-55860-848-6.)
-    class RidgedMulti: public Module
+    class NOISE_EXPORT RidgedMulti : public Module
     {
 
       public:

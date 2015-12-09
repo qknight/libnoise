@@ -56,7 +56,7 @@ namespace noise
     ///
     /// This cylinder has a radius of 1.0 unit and has infinite height.  It is
     /// oriented along the @a y axis.  Its center is located at the origin.
-    class Cylinder
+    class NOISE_EXPORT Cylinder
     {
 
       public:

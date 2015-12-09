@@ -46,7 +46,7 @@ namespace noise
     /// @image html modulemax.png
     ///
     /// This noise module requires two source modules.
-    class Max: public Module
+    class NOISE_EXPORT Max: public Module
     {
 
       public:

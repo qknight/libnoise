@@ -50,7 +50,7 @@ namespace noise
     /// To generate an output value, pass an input value between 0.0 and 1.0
     /// to the GetValue() method.  0.0 represents the start position of the
     /// line segment and 1.0 represents the end position of the line segment.
-    class Line
+    class NOISE_EXPORT Line
     {
 
       public:

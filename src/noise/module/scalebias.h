@@ -56,7 +56,7 @@ namespace noise
     /// outputs the value.
     ///
     /// This noise module requires one source module.
-    class ScaleBias: public Module
+    class NOISE_EXPORT ScaleBias : public Module
     {
 
       public:

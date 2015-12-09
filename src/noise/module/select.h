@@ -81,7 +81,7 @@ namespace noise
     /// method.  Higher values result in a smoother transition.
     ///
     /// This noise module requires three source modules.
-    class Select: public Module
+    class NOISE_EXPORT Select : public Module
     {
 
       public:
