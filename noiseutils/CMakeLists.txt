@@ -6,8 +6,13 @@ add_library(noiseutils-static STATIC noiseutils.cpp )
 SET_TARGET_PROPERTIES( noiseutils PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
 SET_TARGET_PROPERTIES( noiseutils-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
 
-# i would like to see more projects using these defaults
-ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
+target_link_libraries(noiseutils noise)
+target_link_libraries(noiseutils-static noise-static)
+
+# I would like to see more projects using these defaults
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+  ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
+endif()
 
 # Where to look for noise headers
 ADD_DEFINITIONS( "-I${PROJECT_SOURCE_DIR}/src" )

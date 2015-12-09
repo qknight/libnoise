@@ -31,7 +31,9 @@
 #include "../noisegen.h"
 
 #ifdef _WIN32
-#  if NOISE_BUILD_DLL
+#  if NOISE_STATIC
+#    define NOISE_EXPORT
+#  elif NOISE_BUILD_DLL
 #    define NOISE_EXPORT __declspec(dllexport)
 #  else
 #    define NOISE_EXPORT __declspec(dllimport)
