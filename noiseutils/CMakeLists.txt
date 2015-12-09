@@ -9,6 +9,9 @@ SET_TARGET_PROPERTIES( noiseutils-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_
 # i would like to see more projects using these defaults
 ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
 
+# Where to look for noise headers
+ADD_DEFINITIONS( "-I${PROJECT_SOURCE_DIR}/src" )
+
 # install include files into /usr/include
 INSTALL( FILES "${PROJECT_SOURCE_DIR}/noiseutils/noiseutils.h" DESTINATION
   "${CMAKE_INSTALL_PREFIX}/include/noise" )

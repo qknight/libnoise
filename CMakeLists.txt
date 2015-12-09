@@ -8,6 +8,7 @@ OPTION(BUILD_LIBNOISE_DOCUMENTATION "Create doxygen documentation for developers
 
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(noiseutils)
+ADD_SUBDIRECTORY(examples)
 ADD_SUBDIRECTORY(doc)
 
 #ADD_SUBDIRECTORY(samples)
