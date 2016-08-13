@@ -44,10 +44,12 @@ set(libSrcs ${libSrcs}
     module/voronoi.cpp
 )
 
-IF (WIN32)
-add_library( noise SHARED ${libSrcs} win32/dllmain.cpp)
-ELSE()
-add_library( noise SHARED ${libSrcs} )
+IF(BUILD_SHARED_LIBS)
+    IF (WIN32)
+    add_library( noise SHARED ${libSrcs} win32/dllmain.cpp)
+    ELSE()
+    add_library( noise SHARED ${libSrcs} )
+    ENDIF()
 ENDIF()
 
 add_library( noise-static STATIC ${libSrcs} )
