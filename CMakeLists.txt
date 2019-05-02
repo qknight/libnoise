@@ -2,20 +2,26 @@
 
 cmake_minimum_required(VERSION 3.0)
 
-SET ( LIBNOISE_VERSION "1.0.0-cmake" )
+set ( LIBNOISE_VERSION "1.0.0-cmake" )
 
-OPTION(BUILD_SHARED_LIBS "Build shared libraries for libnoise" ON)
-OPTION(BUILD_LIBNOISE_DOCUMENTATION "Create doxygen documentation for developers" OFF)
-OPTION(BUILD_LIBNOISE_UTILS "Build utility functions for use with libnoise" ON)
-OPTION(BUILD_LIBNOISE_EXAMPLES "Build libnoise examples" ON)
+option(BUILD_SHARED_LIBS "Build shared libraries for libnoise" ON)
+option(BUILD_LIBNOISE_DOCUMENTATION "Create doxygen documentation for developers" OFF)
+option(BUILD_LIBNOISE_UTILS "Build utility functions for use with libnoise" ON)
+option(BUILD_LIBNOISE_EXAMPLES "Build libnoise examples" ON)
 
-ADD_SUBDIRECTORY(src)
-IF (BUILD_LIBNOISE_UTILS)
-    ADD_SUBDIRECTORY(noiseutils)
-ENDIF()
-IF (BUILD_LIBNOISE_EXAMPLES)
-    ADD_SUBDIRECTORY(examples)
-ENDIF()
-ADD_SUBDIRECTORY(doc)
+message(STATUS "CMAKE_INSTALL_BINDIR : " ${CMAKE_INSTALL_BINDIR})
+message(STATUS "CMAKE_INSTALL_LIBDIR : " ${CMAKE_INSTALL_LIBDIR})
 
-#ADD_SUBDIRECTORY(samples)
+add_subdirectory(src)
+
+if (BUILD_LIBNOISE_UTILS)
+	add_subdirectory(noiseutils)
+endif()
+
+if (BUILD_LIBNOISE_EXAMPLES)
+	add_subdirectory(examples)
+endif()
+
+add_subdirectory(doc)
+
+#add_subdirectory(samples)

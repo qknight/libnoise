@@ -1,8 +1,8 @@
 # http://www.linux-magazin.de/Heft-Abo/Ausgaben/2007/02/Mal-ausspannen
 
-SET(PROJECT_NAME libnoise)
+set(PROJECT_NAME libnoise)
 
-INCLUDE_DIRECTORIES (noise)
+include_directories (noise)
 
 set(libSrcs ${libSrcs}
     noisegen.cpp
@@ -46,35 +46,40 @@ set(libSrcs ${libSrcs}
 
 IF(BUILD_SHARED_LIBS)
     IF (WIN32)
-    add_library( noise SHARED ${libSrcs} win32/dllmain.cpp)
+		message(STATUS "build - shared for win32 (x86)")
+		add_library( noise SHARED ${libSrcs} win32/dllmain.cpp)
     ELSE()
-    add_library( noise SHARED ${libSrcs} )
+		message(STATUS "build - shared for others")
+		add_library( noise SHARED ${libSrcs} )
     ENDIF()
 ENDIF()
 
 add_library( noise-static STATIC ${libSrcs} )
 
 # this value is set in the root CMakeLists.txt
-SET_TARGET_PROPERTIES( noise PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
-SET_TARGET_PROPERTIES( noise-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
+set_target_properties( noise PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
+set_target_properties( noise-static PROPERTIES LIBNOISE_VERSION ${LIBNOISE_VERSION} )
 
 target_compile_definitions( noise PRIVATE NOISE_BUILD_DLL)
 target_compile_definitions( noise-static PUBLIC NOISE_STATIC)
 
-SET_TARGET_PROPERTIES( noise-static PROPERTIES OUTPUT_NAME "noise" )
+set_target_properties( noise-static PROPERTIES OUTPUT_NAME "noise" )
 
-# i would like to see more projects using these defaults
+# I would like to see more projects using these defaults
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-  ADD_DEFINITIONS( "-Wall -ansi -pedantic -O3" )
+	message(STATUS "noiseutils - using optimized compile settings with all warnings enabled")
+	add_compile_options(-Wall -ansi -pedantic -O3)
+elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+	message(STATUS "noiseutils - using optimized compile settings with all warnings enabled")
+	add_compile_options(/Wall /Ox)
 endif()
 
-# install include files into /usr/include
-INSTALL( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" DESTINATION
-  "${CMAKE_INSTALL_PREFIX}/include" )
+# install include files into /include
+install( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" 
+		DESTINATION "${CMAKE_INSTALL_PREFIX}/include" )
 
-# install libraries into /lib
-INSTALL( TARGETS noise DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" )
-INSTALL( TARGETS noise-static DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" )
+# install dynamic libraries (.dll or .so) into /bin
+install( TARGETS noise DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" )
 
-
-
+# install static libraries (.lib) into /lib
+install( TARGETS noise-static DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" )
