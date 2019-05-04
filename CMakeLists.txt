@@ -7,7 +7,7 @@ set(LIBNOISE_VERSION "1.0.0-cmake")
 #----------------------------------------
 # Provide an option for the user to select (default given; otherwhise pass -Doption=ON to cmake)
 option(BUILD_WALL "Build with all warnings enabled" OFF)
-option(BUILD_OPTIMIZED "Build with optimization for speed" OFF)
+option(BUILD_SPEED_OPTIMIZED "Build with optimization for speed (only in release build)" ON)
 option(BUILD_SHARED_LIBS "Build shared libraries for libnoise" ON)
 option(BUILD_LIBNOISE_DOCUMENTATION "Create doxygen documentation for developers" OFF)
 option(BUILD_LIBNOISE_UTILS "Build utility functions for use with libnoise" ON)
@@ -15,6 +15,7 @@ option(BUILD_LIBNOISE_EXAMPLES "Build libnoise examples" ON)
 
 #----------------------------------------
 # enable all warnings
+# usually the library implementor needs to take care of those warnings and not the user of the lib
 if (BUILD_WALL)
 	if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 		message(STATUS "GNU - using build with all warnings enabled")
@@ -27,7 +28,8 @@ endif()
 
 #----------------------------------------
 # enable optimized compile settings
-if (BUILD_OPTIMIZED)
+# This cmake build by default (if not in developer mode; hence release build) will build with `-O3`
+if (BUILD_SPEED_OPTIMIZED AND CMAKE_BUILD_TYPE EQUAL "Release")
 	if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 		message(STATUS "GNU - using compiler optimization for speed")
 		add_compile_options(-O3)
