@@ -47,14 +47,16 @@ make install
 Usage
 -----
 
-see examples for details but in general:
+If you want to use this library, there are two ways of doing this (see examples for further details):
 
- 1. you need to supply the library `-lnoise` to the linker
- 2. the includes to the compile with `-I /usr/include/noise`
+* Linker
 
-OR
+** 1. you need to supply the library `-lnoise` to the linker
+** 2. the includes to the compile with `-I /usr/include/noise`
 
-Use provided FindLibNoise.cmake
+* CMake
+
+** use the provided FindLibNoise.cmake
 
 A comment on performance
 ------------------------
@@ -63,10 +65,13 @@ Using compiler optimizations for libnoise is *strongly recommended*.  Using the
 unoptimized library is roughly a fifth as fast as using -O3 on my test
 computer.
 
-this cmake build by default (if not in developer mode) will build with `-O3`
-
+This cmake build by default (if not in developer mode; hence release build) will build with `-O3`
 
 see:
 CMAKE_BUILD_TYPE
 
 Type of build (Debug, Release, ...)
+
+If you want to disable optimizations, pass the following to the cmake arguments:
+```"-DBUILD_SPEED_OPTIMIZED=OFF"```
+
