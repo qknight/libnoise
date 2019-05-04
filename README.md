@@ -51,12 +51,12 @@ If you want to use this library, there are two ways of doing this (see examples 
 
 * Linker
 
-** 1. you need to supply the library `-lnoise` to the linker
-** 2. the includes to the compile with `-I /usr/include/noise`
+ 1. you need to supply the library `-lnoise` to the linker
+ 2. the includes to the compile with `-I /usr/include/noise`
 
 * CMake
 
-** use the provided FindLibNoise.cmake
+use the provided FindLibNoise.cmake
 
 A comment on performance
 ------------------------
