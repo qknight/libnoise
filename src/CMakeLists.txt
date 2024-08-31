@@ -1,6 +1,9 @@
 # http://www.linux-magazin.de/Heft-Abo/Ausgaben/2007/02/Mal-ausspannen
 
 set(PROJECT_NAME libnoise)
+set(LIB_NAME noise)
+message(STATUS "\n\n#############################################")
+message(STATUS "# building project ${PROJECT_NAME}")
 
 include_directories (noise)
 

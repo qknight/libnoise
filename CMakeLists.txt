@@ -2,7 +2,7 @@
 
 cmake_minimum_required(VERSION 3.0)
 
-set ( LIBNOISE_VERSION "1.0.0-cmake" )
+set(LIBNOISE_VERSION "1.0.0-cmake")
 
 #----------------------------------------
 # Provide an option for the user to select (default given; otherwhise pass -Doption=ON to cmake)
@@ -38,16 +38,34 @@ if (BUILD_SPEED_OPTIMIZED AND CMAKE_BUILD_TYPE EQUAL "Release")
 		add_compile_options(/Ox)
 	endif()
 endif()
+
+#----------------------------------------
+# src
 add_subdirectory(src)
 
+#----------------------------------------
+# docs
+if(BUILD_LIBNOISE_DOCUMENTATION)
+	add_subdirectory(doc) 
+endif()
+
+#----------------------------------------
+# noiseutils
 if (BUILD_LIBNOISE_UTILS)
 	add_subdirectory(noiseutils)
 endif()
 
-if (BUILD_LIBNOISE_EXAMPLES)
-	add_subdirectory(examples)
+#----------------------------------------
+# examples
+if (BUILD_LIBNOISE_EXAMPLES AND BUILD_LIBNOISE_UTILS)
+	add_subdirectory(examples) # examples also depend on noiseutils
+elseif (BUILD_LIBNOISE_EXAMPLES)
+	message(STATUS "examples depend on noiseutils - \
+		fix: pass option -DBUILD_SHARED_LIBS=ON to cmake")
 endif()
 
-add_subdirectory(doc)
 
-#add_subdirectory(samples)
+#----------------------------------------
+# unused variables passed by vcpkg
+message(STATUS "CMAKE_INSTALL_BINDIR : " ${CMAKE_INSTALL_BINDIR})
+message(STATUS "CMAKE_INSTALL_LIBDIR : " ${CMAKE_INSTALL_LIBDIR})
